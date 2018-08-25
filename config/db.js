@@ -6,7 +6,7 @@ mongoose.connect(DB_URL);
 
 // when successfully connected
 mongoose.connection.on('connected', () => {
-  console.log('Mongoose default connection open to ' + DB_URL);
+  console.log('Mongoose default connection open to:' + DB_URL);
 });
 
 // when connection throws an error
@@ -15,8 +15,8 @@ mongoose.connection.on('error', (err) => {
 });
 
 // when connection is disconnected
-mongoose.connection.on('disconnected', () => {
-  console.log('Mongoose default connection disconnected');
+mongoose.connection.on('disconnected', (err) => {
+  console.log('Mongoose default connection disconnected:', err);
 });
 
 // close the Mongoose connection when node process ends

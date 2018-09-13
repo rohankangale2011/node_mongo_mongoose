@@ -2,16 +2,16 @@ import cluster from 'cluster';
 import express from 'express';
 import bodyParser from 'body-parser';
 import mongoose from 'mongoose';
-import router from './route';
+import UserModel from './model';
+import authRouter from './route/auth';
+import userRouter from './route/user';
 import './config/db';
 
-import UserModel from './model';
-
 const app = express();
-
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
-app.use('/route', router);
+app.use('/auth', authRouter);
+app.use('/user', userRouter);
 
 app.use((req, res, next) => {
   res.header('Access-Control-Allow-Origin', '*');

@@ -16,9 +16,11 @@
     "babel-register": "^6.26.0"
   },
   "dependencies": {
+    "bcryptjs": "^2.4.3",
     "body-parser": "^1.18.3",
     "cluster": "^0.7.7",
     "express": "^4.16.3",
+    "jsonwebtoken": "^8.3.0",
     "mongoose": "^5.2.5",
     "morgan": "^1.9.0",
     "os": "^0.1.1",

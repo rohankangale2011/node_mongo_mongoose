@@ -21,4 +21,5 @@ npm start
 * [Mongoose](https://mongoosejs.com/) - An object document mapper(ODM)
 * [Cluster](https://nodejs.org/api/cluster.html) - For improving the efficiency of nodejs server. You can have a look at <a href="https://github.com/rohankangale2011/node-clustering">cluster node</a>
  to have a quick insight on the same.
+* [JWT](https://jwt.io/introduction/) - An authentication mechanism for passing the data/information between client and server securely.
 

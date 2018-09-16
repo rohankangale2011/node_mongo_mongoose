@@ -1,5 +1,6 @@
 import express from 'express';
 import {getList, register} from '../service/user';
+import {isValidAuth} from '../service/auth';
 
 const userRouter = express.Router();
 
@@ -7,7 +8,7 @@ userRouter.get('/', (req, res, next) => {
     res.send('Found default router');
 });
 
-userRouter.get('/get', (req, res, next) => {
+userRouter.get('/get', isValidAuth, (req, res, next) => {
     getList().then(resp => {
         res.json(resp);
     }, err=> {
@@ -17,10 +18,8 @@ userRouter.get('/get', (req, res, next) => {
 
 userRouter.post('/register', (req, res, next) => {
     register(req.body).then(resp => {
-        console.log('Registered successfully:' ,resp);
         res.json(resp);
     }, err => {
-        console.log('Error while registration:', err);
         res.json({
             message: 'error',
             data: err

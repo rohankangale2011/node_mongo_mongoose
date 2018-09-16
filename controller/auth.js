@@ -1,6 +1,5 @@
 import jwt from 'jsonwebtoken';
 import bcrypt from 'bcryptjs';
-// import mongoose from 'mongoose';
 import {SECRET} from '../config/app-config';
 import User from '../model';
 
